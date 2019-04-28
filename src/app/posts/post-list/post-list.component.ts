@@ -34,7 +34,7 @@ ngOnInit() {
   this.postsSub = this.postsService.getPostUpdateListener()
   .subscribe((postData: {posts: Post[], postCount: number}) => {
     this.isLoading = false;
-this.totalPosts = postData.postCount;   
+this.totalPosts = postData.postCount;
     this.posts = postData.posts;
   });
   }
@@ -49,7 +49,7 @@ this.totalPosts = postData.postCount;
 onDelete(postId: string) {
     this.isLoading = true;
   this.postsService.deletePost(postId).subscribe(() => {
-this.PostsService.getPosts(this.postsPerPage, this.currentPage)
+this.postsService.getPosts(this.postsPerPage, this.currentPage)
 
 });
 }
